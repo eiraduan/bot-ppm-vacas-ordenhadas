@@ -2,7 +2,7 @@ import logging
 import download
 import join_files
 import clean_table
-import create_table_map
+# import create_table_map
 import insert
 
 from pathlib import Path
@@ -39,11 +39,11 @@ def main():
         logger.info("--- Etapa 2: Unindo os arquivos ---")
         join_files.main()
         
-        # logger.info("--- Etapa 3: Limpando tabelas no banco de dados ---")
-        # clean_table.main()
+        logger.info("--- Etapa 3: Limpando tabelas no banco de dados ---")
+        clean_table.main()
         
-        # logger.info("--- Etapa 4: Inserindo dados na tabela principal ---")
-        # insert.main()
+        logger.info("--- Etapa 4: Inserindo dados na tabela principal ---")
+        insert.main()
         
         # logger.info("--- Etapa 5: Criando a tabela de mapa ---")
         # create_table_map.main()
