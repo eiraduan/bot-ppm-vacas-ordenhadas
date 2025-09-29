@@ -2,7 +2,7 @@ import logging
 import download
 import join_files
 import clean_table
-# import create_table_map
+import create_table_map
 import insert
 
 from pathlib import Path
@@ -26,7 +26,6 @@ def setup_master_logging(log_file='processo_completo.log'):
     )
 
 def main():
-    # --- Passo 1: Configurar o logger principal (executar apenas uma vez) ---
     setup_master_logging()
     logger = logging.getLogger(__name__)
 
@@ -45,10 +44,10 @@ def main():
         logger.info("--- Etapa 4: Inserindo dados na tabela principal ---")
         insert.main()
         
-        # logger.info("--- Etapa 5: Criando a tabela de mapa ---")
-        # create_table_map.main()
+        logger.info("--- Etapa 5: Criando a tabela de mapa ---")
+        create_table_map.main()
         
-        # logger.info("Processo concluído com sucesso!")
+        logger.info("Processo concluído com sucesso!")
 
     except Exception as e:
         logger.error(f"O processo falhou em alguma etapa: {e}")

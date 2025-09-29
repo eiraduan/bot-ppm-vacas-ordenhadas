@@ -34,7 +34,7 @@ def main():
 
     for year in range(first_year, current_year):
         try:
-            logger.info(f"Ïniciando download para o ano: {year}")
+            logger.info(f"Iniciando download para o ano: {year}")
             
             sidra_data = sidrapy.get_table(
                 table_code="94",
