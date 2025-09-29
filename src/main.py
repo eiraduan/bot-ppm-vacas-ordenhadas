@@ -1,5 +1,6 @@
 import logging
 import download
+import join_files
 
 from pathlib import Path
 
@@ -29,6 +30,9 @@ def main():
     try:
         logger.info("--- Etapa 1: Download dos arquivos ---")
         download.main()
+
+        logger.info("--- Etapa 2: Unindo os arquivos ---")
+        join_files.main()
 
     except Exception as e:
         logger.error(f"O processo falhou em alguma etapa: {e}")
